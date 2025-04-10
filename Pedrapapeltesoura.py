@@ -1,5 +1,5 @@
 print("***BEM VINDO***")
-
+print("Leia o README.md antes de jogar")
 import getpass  # Importa o módulo getpass para esconder a entrada dos jogadores
 
 # Menu inicial para o usuário escolher o modo de jogo
