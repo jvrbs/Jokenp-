@@ -107,7 +107,8 @@ if opcaomenu == 1:
     print(f"Vitórias por papel:{vitoriaspapel}")
     print(f"Vitórias por tesoura:{vitoriastesoura}")
 
-    print("Obrigado por jogar")    
+    print("Obrigado por jogar")
+    
 
 # Modo 2: Player vs CPU
 elif opcaomenu == 2:
@@ -400,3 +401,5 @@ elif opcaomenu == 3:
 # Opção 4: o jogador escolheu sair do jogo
 elif opcaomenu == 4:
     print("Você escolheu sair")
+
+print("Programa desenvolvido por: João Vitor Simão Ribas, Eduardo Marques e Arthur Krauze")   
