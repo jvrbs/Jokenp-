@@ -8,6 +8,10 @@ print("4 - Sair")
 
 opcaomenu = int(input("Insira a opção desejada:"))
 
+while opcaomenu < 1 or opcaomenu > 4:
+    print("Opção Inválida")
+    opcaomenu = int(input("Selecione novamente:"))
+
 if opcaomenu == 1:
     print("Modo CPU VS CPU")
 
@@ -19,8 +23,12 @@ elif opcaomenu == 2:
 
 
 
+
+
 elif opcaomenu == 3:
     print("Modo PLAYER VS PLAYER")
+
+
 
 
 elif opcaomenu == 4:
