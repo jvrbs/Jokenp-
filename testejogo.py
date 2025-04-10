@@ -3,9 +3,10 @@ print("pedra")
 print("papel")
 print("tesoura")
 
-player1 = str(input("selecione oque o player 1 deseja jogar:")).lower()
+import getpass
 
-player2 = str(input("selecione oque o player 2 deseja jogar:")).lower()
+player1 = getpass.getpass("Player 1, selecione o que deseja jogar: ").lower()
+player2 = getpass.getpass("Player 2, selecione o que deseja jogar: ").lower()
 
 vitoriasP1 = 0
 vitoriasP2 = 0
@@ -63,9 +64,8 @@ while continuar == 1:                #o jogo continua repetindo o codigo
     print("papel")
     print("tesoura")
 
-    player1 = str(input("selecione oque o player 1 deseja jogar:")).lower()
-
-    player2 = str(input("selecione oque o player 2 deseja jogar:")).lower()
+    player1 = getpass.getpass("Player 1, selecione o que deseja jogar: ").lower()
+    player2 = getpass.getpass("Player 2, selecione o que deseja jogar: ").lower()
 
     while player1 not in ["pedra", "papel","tesoura"]:
         print("Player 1 sua opção é inválida")
