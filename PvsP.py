@@ -5,19 +5,21 @@ print("tesoura")
 
 import getpass
 
-player1 = getpass.getpass("Player 1, selecione o que deseja jogar: ").lower()
-player2 = getpass.getpass("Player 2, selecione o que deseja jogar: ").lower()
+import random
+
+player1 = getpass.getpass("Player 1, digite o que deseja jogar: ").lower()
+player2 = getpass.getpass("Player 2, digite o que deseja jogar: ").lower()
 
 vitoriasP1 = 0
 vitoriasP2 = 0
 
 while player1 not in ["pedra", "papel","tesoura"]:
     print("Player 1 sua opção é inválida")
-    player1 = str(input("Por favor selecione novamente:"))
+    player1 = str(input("Por favor digite novamente:"))
 
 while player2 not in ["pedra", "papel","tesoura"]:
     print("Player 2 sua opção é inválida")
-    player2 = str(input("Por favor selecione novamente:"))
+    player2 = str(input("Por favor digite novamente:"))
 
 if player1 == "pedra" and player2 == "pedra":
     print("o jogo empatou")
@@ -64,16 +66,16 @@ while continuar == 1:                #o jogo continua repetindo o codigo
     print("papel")
     print("tesoura")
 
-    player1 = getpass.getpass("Player 1, selecione o que deseja jogar: ").lower()
-    player2 = getpass.getpass("Player 2, selecione o que deseja jogar: ").lower()
+    player1 = getpass.getpass("Player 1, digite o que deseja jogar: ").lower()
+    player2 = getpass.getpass("Player 2, digite o que deseja jogar: ").lower()
 
     while player1 not in ["pedra", "papel","tesoura"]:
         print("Player 1 sua opção é inválida")
-        player1 = str(input("Por favor selecione novamente:"))
+        player1 = str(input("Por favor digite novamente:"))
 
     while player2 not in ["pedra", "papel","tesoura"]:
         print("Player 2 sua opção é inválida")
-        player2 = str(input("Por favor selecione novamente:"))
+        player2 = str(input("Por favor digite novamente:"))
 
     if player1 == "pedra" and player2 == "pedra":
         print("o jogo empatou")
