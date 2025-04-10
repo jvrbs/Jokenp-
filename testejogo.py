@@ -1,44 +1,52 @@
-pedra = 1
-papel = 2
-tesoura = 3
+print("Bem vindo ao modo PLAYER VS PLAYER, cada jogador deve escolher uma das seguintes opções:")
+print("pedra")
+print("papel")
+print("tesoura")
 
-print("pedra 1")
-print("papel 2")
-print("tesoura 3")
+player1 = str(input("selecione oque o player 1 deseja jogar:")).lower()
 
+player2 = str(input("selecione oque o player 2 deseja jogar:")).lower()
 
-player1 = int(input("selecione oque o player 1 deseja jogar:"))
+vitoriasP1 = 0
+vitoriasP2 = 0
 
-player2 = int(input("selecione oque o player 2 deseja jogar:"))
+while player1 not in ["pedra", "papel","tesoura"]:
+    print("Player 1 sua opção é inválida")
+    player1 = str(input("Por favor selecione novamente:"))
 
-while player1 < 1 or player1 > 3:
-    print("Player 1 sua opção inválida")
-    player1 = int(input("Por favor selecione novamente:"))
+while player2 not in ["pedra", "papel","tesoura"]:
+    print("Player 2 sua opção é inválida")
+    player2 = str(input("Por favor selecione novamente:"))
 
-while player2 < 1 or player2 > 3:
-    print("Player 2 sua opção inválida")
-    player2 = int(input("Por favor selecione novamente:"))
-
-if player1 == 1 and player2 == 1:
+if player1 == "pedra" and player2 == "pedra":
     print("o jogo empatou")
-elif player1 == 1 and player2 == 2:
+elif player1 == "pedra" and player2 == "papel":
     print("o jogador 2 ganhou o jogo")
-elif player1 == 1 and player2 == 3:
+    vitoriasP2 += 1
+elif player1 == "pedra" and player2 == "tesoura":
     print("o jogador 1 ganhou o jogo")
-elif player1 == 2 and player2 == 1:
+    vitoriasP1 += 1
+elif player1 == "papel" and player2 == "pedra":
     print("o jogador 1 ganhou o jogo")
-elif player1 == 2 and player2 == 2:
+    vitoriasP1 += 1
+elif player1 == "papel" and player2 == "papel":
     print("o jogo empatou")
-elif player1 == 2 and player2 == 3:
+elif player1 == "papel" and player2 == "tesoura":
     print("o jogador 2 ganhou o jogo")
-elif player1 == 3 and player2 == 1:
+    vitoriasP2 += 1
+elif player1 == "tesoura" and player2 == "pedra":
     print("o jogador 2 ganhou o jogo")
-elif player1 == 3 and player2 == 2:
+    vitoriasP2 += 1
+elif player1 == "tesoura" and player2 == "papel":
     print("o jogador 1 ganhou o jogo")
-elif player1 == 3 and player2 == 3:
+    vitoriasP1 += 1
+elif player1 == "tesoura" and player2 == "tesoura":
     print("o jogo empatou")
 
 continuar = 0
+
+print("PLACAR:")
+print(f"Player1 {vitoriasP1} VS {vitoriasP2} Player2")
 
 print("deseja continuar a jogo?")
 print("1 - sim")
@@ -51,43 +59,51 @@ while continuar < 1 or continuar > 2:
 
 
 while continuar == 1:                #o jogo continua repetindo o codigo
-    print("pedra 1")
-    print("papel 2")
-    print("tesoura 3")
+    print("pedra")
+    print("papel")
+    print("tesoura")
 
+    player1 = str(input("selecione oque o player 1 deseja jogar:")).lower()
 
-    player1 = int(input("selecione oque o player 1 deseja jogar:"))
+    player2 = str(input("selecione oque o player 2 deseja jogar:")).lower()
 
-    player2 = int(input("selecione oque o player 2 deseja jogar:"))
+    while player1 not in ["pedra", "papel","tesoura"]:
+        print("Player 1 sua opção é inválida")
+        player1 = str(input("Por favor selecione novamente:"))
 
-    while player1 < 1 or player1 > 3:
-        print("Player 1 sua opção inválida")
-        player1 = int(input("Por favor selecione novamente:"))
+    while player2 not in ["pedra", "papel","tesoura"]:
+        print("Player 2 sua opção é inválida")
+        player2 = str(input("Por favor selecione novamente:"))
 
-    while player2 < 1 or player2 > 3:
-        print("Player 2 sua opção inválida")
-        player2 = int(input("Por favor selecione novamente:"))
-
-    if player1 == 1 and player2 == 1:
+    if player1 == "pedra" and player2 == "pedra":
         print("o jogo empatou")
-    elif player1 == 1 and player2 == 2:
+    elif player1 == "pedra" and player2 == "papel":
         print("o jogador 2 ganhou o jogo")
-    elif player1 == 1 and player2 == 3:
+        vitoriasP2 += 1
+    elif player1 == "pedra" and player2 == "tesoura":
         print("o jogador 1 ganhou o jogo")
-    elif player1 == 2 and player2 == 1:
+        vitoriasP1 += 1
+    elif player1 == "papel" and player2 == "pedra":
         print("o jogador 1 ganhou o jogo")
-    elif player1 == 2 and player2 == 2:
+        vitoriasP1 += 1
+    elif player1 == "papel" and player2 == "papel":
         print("o jogo empatou")
-    elif player1 == 2 and player2 == 3:
+    elif player1 == "papel" and player2 == "tesoura":
         print("o jogador 2 ganhou o jogo")
-    elif player1 == 3 and player2 == 1:
+        vitoriasP2 += 1
+    elif player1 == "tesoura" and player2 == "pedra":
         print("o jogador 2 ganhou o jogo")
-    elif player1 == 3 and player2 == 2:
+        vitoriasP2 += 1
+    elif player1 == "tesoura" and player2 == "papel":
         print("o jogador 1 ganhou o jogo")
-    elif player1 == 3 and player2 == 3:
+        vitoriasP1 += 1
+    elif player1 == "tesoura" and player2 == "tesoura":
         print("o jogo empatou")
 
     continuar = 0
+
+    print("PLACAR:")
+    print(f"Player1 {vitoriasP1} VS {vitoriasP2} Player2")
 
     print("deseja continuar a jogo?")
     print("1 - sim")
