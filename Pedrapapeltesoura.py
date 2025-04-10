@@ -65,30 +65,30 @@ if opcaomenu == 1:
             print("o jogo empatou")
             empate += 1
         elif cpu1 == "pedra" and cpu2 == "papel":
-            print("o cpu2 ganhou o jogo")
+            print("a cpu2 ganhou o jogo")
             vitoriasCPU2 += 1
             vitoriaspapel += 1
         elif cpu1 == "pedra" and cpu2 == "tesoura":
-            print("o cpu1 ganhou o jogo")
+            print("a cpu1 ganhou o jogo")
             vitoriasCPU1 += 1
             vitoriaspedra += 1
         elif cpu1 == "papel" and cpu2 == "pedra":
-            print("o cpu1 ganhou o jogo")
+            print("a cpu1 ganhou o jogo")
             vitoriasCPU1 += 1
             vitoriaspapel += 1
         elif cpu1 == "papel" and cpu2 == "papel":
             print("o jogo empatou")
             empate += 1
         elif cpu1 == "papel" and cpu2 == "tesoura":
-            print("o cpu2 ganhou o jogo")
+            print("a cpu2 ganhou o jogo")
             vitoriasCPU2 += 1
             vitoriastesoura += 1
         elif cpu1 == "tesoura" and cpu2 == "pedra":
-            print("o cpu2 ganhou o jogo")
+            print("a cpu2 ganhou o jogo")
             vitoriasCPU2 += 1
             vitoriaspedra += 1
         elif cpu1 == "tesoura" and cpu2 == "papel":
-            print("o cpu1 ganhou o jogo")
+            print("a cpu1 ganhou o jogo")
             vitoriasCPU1 += 1
             vitoriastesoura += 1
         elif cpu1 == "tesoura" and cpu2 == "tesoura":
@@ -146,21 +146,21 @@ elif opcaomenu == 2:
     if player == "pedra" and computador == "pedra":
         print("o jogo empatou")
     elif player == "pedra" and computador == "papel":
-        print("o jogador 2 ganhou o jogo")
+        print("a cpu ganhou o jogo")
         vitoriasCPU += 1
     elif player == "pedra" and computador == "tesoura":
-        print("o jogador 1 ganhou o jogo")
+        print("o jogador ganhou o jogo")
         vitoriasP1 += 1
     elif player == "papel" and computador == "pedra":
-        print("o jogador 1 ganhou o jogo")
+        print("o jogador ganhou o jogo")
         vitoriasP1 += 1
     elif player == "papel" and computador == "papel":
         print("o jogo empatou")
     elif player == "papel" and computador == "tesoura":
-        print("o jogador 2 ganhou o jogo")
+        print("a cpu ganhou o jogo")
         vitoriasCPU += 1
     elif player == "tesoura" and computador == "pedra":
-        print("o jogador 2 ganhou o jogo")
+        print("a cpu ganhou o jogo")
         vitoriasCPU += 1
     elif player == "tesoura" and computador == "papel":
         print("o jogador 1 ganhou o jogo")
