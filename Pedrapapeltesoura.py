@@ -338,6 +338,7 @@ elif opcaomenu == 3:
 
     if continuar == 2:
         print("\nObrigado por jogar!!!")
+        print(autores)
 
     # Loop de jogadas
     while continuar == 1:
