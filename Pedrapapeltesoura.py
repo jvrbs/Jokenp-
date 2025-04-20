@@ -1,46 +1,50 @@
+import getpass 
+import random
+
+# Declaração dos autores do programa
+autores = "Programa desenvolvido por: João Vitor Simão Ribas, Eduardo Trancoso Marques e Arthur Krauze"
+
+# Mensagem inicial de boas-vindas e instruções
 print("***BEM VINDO***")
 print("Leia o README.md antes de jogar")
-import getpass  # Importa o módulo getpass para esconder a entrada dos jogadores
+print("Escolha o seu modo de jogo:")
 
-# Menu inicial para o usuário escolher o modo de jogo
-print("1 - CPU vs CPU")
+# Exibição do menu de opções
+print("\n1 - CPU vs CPU")
 print("2 - PLAYER vs CPU")
 print("3 - PLAYER vs PLAYER")
 print("4 - Sair")
 
-opcaomenu = int(input("Insira a opção desejada:"))
+# Entrada da opção desejada
+opcaomenu = int(input("\nInsira a opção desejada: "))
 
-# Valida se a opção do menu é válida
-while opcaomenu < 1 or opcaomenu > 4:
-    print("Opção Inválida")
-    opcaomenu = int(input("Selecione novamente:"))
+# Validação da opção escolhida
+while opcaomenu not in [1, 2, 3, 4]:
+    print("\nOpção Inválida")
+    opcaomenu = int(input("Selecione novamente: "))
 
-# Modo 1: CPU vs CPU
+# Lógica para cada modo de jogo
 if opcaomenu == 1:
-    print("Modo CPU VS CPU")
+    # CPU vs CPU
+    print("\nModo CPU VS CPU")
     print("Bem vindo ao modo CPU VS CPU, o jogador deve escolher o numero de rodadas desejadas")
 
-    rodadas = int ( input("Digite o numero de jogadas desejadas:"))
+    # Escolha do número de rodadas
+    rodadas = int ( input("\nDigite o numero de jogadas desejadas: "))
 
-    # Garante que o número de rodadas seja positivo
-    while rodadas < 0:
-        rodadas = int(input("Valor inválido, digite novamente:"))
+    # Validação do número de rodadas
+    while rodadas <= 0:
+        rodadas = int(input("Valor inválido, digite novamente: "))
 
-    import random  # Importa o módulo random para gerar jogadas aleatórias
-
-    # Inicialização dos contadores de vitórias
+    # Inicialização dos placares
     vitoriasCPU1 = 0
     vitoriasCPU2 = 0
     empate = 0
 
-    # Inicialização das estatísticas por tipo de jogada
-    vitoriaspedra = 0
-    vitoriaspapel = 0
-    vitoriastesoura = 0
-
     contador = 0
+    # Loop principal das rodadas
     while contador < rodadas:
-        # Gera jogada aleatória para CPU1
+        # Sorteio da jogada da CPU1
         sorteio1 = random.randint(1, 3)
         cpu1 = 0
         if sorteio1 == 1:
@@ -50,7 +54,7 @@ if opcaomenu == 1:
         elif sorteio1 == 3:
             cpu1 = "tesoura"
 
-        # Gera jogada aleatória para CPU2
+        # Sorteio da jogada da CPU2
         sorteio2 = random.randint(1, 3)
         cpu2 = 0
         if sorteio2 == 1:
@@ -60,80 +64,69 @@ if opcaomenu == 1:
         elif sorteio2 == 3:
             cpu2 = "tesoura"
 
-        # Compara jogadas e atualiza placar e estatísticas
+        # Determinação do vencedor da rodada
         if cpu1 == "pedra" and cpu2 == "pedra":
-            print("o jogo empatou")
+            print("\no jogo empatou")
             empate += 1
         elif cpu1 == "pedra" and cpu2 == "papel":
-            print("a cpu2 ganhou o jogo")
+            print("\na cpu2 ganhou o jogo")
             vitoriasCPU2 += 1
-            vitoriaspapel += 1
         elif cpu1 == "pedra" and cpu2 == "tesoura":
-            print("a cpu1 ganhou o jogo")
+            print("\na cpu1 ganhou o jogo")
             vitoriasCPU1 += 1
-            vitoriaspedra += 1
         elif cpu1 == "papel" and cpu2 == "pedra":
-            print("a cpu1 ganhou o jogo")
+            print("\na cpu1 ganhou o jogo")
             vitoriasCPU1 += 1
-            vitoriaspapel += 1
         elif cpu1 == "papel" and cpu2 == "papel":
-            print("o jogo empatou")
+            print("\no jogo empatou")
             empate += 1
         elif cpu1 == "papel" and cpu2 == "tesoura":
-            print("a cpu2 ganhou o jogo")
+            print("\na cpu2 ganhou o jogo")
             vitoriasCPU2 += 1
-            vitoriastesoura += 1
         elif cpu1 == "tesoura" and cpu2 == "pedra":
-            print("a cpu2 ganhou o jogo")
+            print("\na cpu2 ganhou o jogo")
             vitoriasCPU2 += 1
-            vitoriaspedra += 1
         elif cpu1 == "tesoura" and cpu2 == "papel":
-            print("a cpu1 ganhou o jogo")
+            print("\na cpu1 ganhou o jogo")
             vitoriasCPU1 += 1
-            vitoriastesoura += 1
         elif cpu1 == "tesoura" and cpu2 == "tesoura":
-            print("o jogo empatou")
+            print("\no jogo empatou")
             empate += 1
 
-        contador += 1  # Próxima rodada
+        contador += 1 
 
-    # Mostra o placar final e estatísticas
-    print("***PLACAR FINAL***")
+    # Exibição do placar final
+    print("\n***PLACAR FINAL***")
     print(f"CPU1 {vitoriasCPU1} vs {vitoriasCPU2} CPU2")
+    print(f"Também tivemos {empate} empates")
 
-    print("Estatísticas")
-    print(f"empates:{empate}")
-    print(f"Vitórias por pedra:{vitoriaspedra}")
-    print(f"Vitórias por papel:{vitoriaspapel}")
-    print(f"Vitórias por tesoura:{vitoriastesoura}")
+    # Mensagem de agradecimento
+    print("\nObrigado por jogar")
+    print(autores)   
 
-    print("Obrigado por jogar")
-    
-
-# Modo 2: Player vs CPU
 elif opcaomenu == 2:
+    # PLAYER vs CPU
     print("Modo PLAYER VS CPU")
-    # Apresentação inicial do jogo
+
+    # Explicação das opções
     print("Bem vindo ao modo PLAYER VS CPU, o jogador deve escolher uma das seguintes opções:")
     print("pedra")
     print("papel")
-    print("tesoura")
+    print("tesoura")  
 
-    import random  # Importa a biblioteca para gerar jogada aleatória do computador
-
-    # Inicialização das variáveis de placar
+    # Inicialização dos placares
     vitoriasP1 = 0
     vitoriasCPU = 0
 
-    # Entrada do jogador
-    player = input("Digite oque deseja jogar:")
+    # Jogada do player
+    player = input("\nDigite o que deseja jogar: ").lower()
 
-    # Verifica se a opção do jogador é válida
+    # Validação da jogada do player
     while player not in ["pedra", "papel", "tesoura"]:
-        print("Player 1 sua opção é inválida")
-        player = str(input("Por favor digite novamente:"))
+        print("\nPlayer 1 sua opção é inválida")
+        player = str(input("Por favor digite novamente: ")).lower()
 
-    # CPU escolhe aleatoriamente pedra, papel ou tesoura
+    # Sorteio da jogada da CPU
     sorteio = random.randint(1, 3)
     computador = 0
     if sorteio == 1:
@@ -143,70 +136,63 @@ elif opcaomenu == 2:
     elif sorteio == 3:
         computador = "tesoura"
 
-    # Verifica o resultado da partida
+    # Determinação do vencedor
     if player == "pedra" and computador == "pedra":
-        print("o jogo empatou")
+        print("\no jogo empatou")
     elif player == "pedra" and computador == "papel":
-        print("a cpu ganhou o jogo")
+        print("\na cpu ganhou o jogo")
         vitoriasCPU += 1
     elif player == "pedra" and computador == "tesoura":
-        print("o jogador ganhou o jogo")
+        print("\no jogador ganhou o jogo")
         vitoriasP1 += 1
     elif player == "papel" and computador == "pedra":
-        print("o jogador ganhou o jogo")
+        print("\no jogador ganhou o jogo")
         vitoriasP1 += 1
     elif player == "papel" and computador == "papel":
-        print("o jogo empatou")
+        print("\no jogo empatou")
     elif player == "papel" and computador == "tesoura":
-        print("a cpu ganhou o jogo")
+        print("\na cpu ganhou o jogo")
         vitoriasCPU += 1
     elif player == "tesoura" and computador == "pedra":
-        print("a cpu ganhou o jogo")
+        print("\na cpu ganhou o jogo")
         vitoriasCPU += 1
     elif player == "tesoura" and computador == "papel":
-        print("o jogador 1 ganhou o jogo")
+        print("\no jogador 1 ganhou o jogo")
         vitoriasP1 += 1
     elif player == "tesoura" and computador == "tesoura":
-        print("o jogo empatou")
+        print("\no jogo empatou")
 
-    continuar = 0  # Inicializa a variável que decide se o jogo continua
-
-    # Mostra o placar atual
-    print("PLACAR:")
+    # Exibição do placar
+    print("\nPLACAR:")
     print(f"Player {vitoriasP1} VS {vitoriasCPU} CPU")
 
-    # Pergunta se os jogadores querem continuar jogando
-    print("deseja continuar a jogo?")
+    # Pergunta se o jogador deseja continuar
+    print("\ndeseja continuar o jogo?")
     print("1 - sim")
     print("2 - não")
+    continuar = 0 
 
-    # Entrada do usuário sobre continuar ou não
-    continuar = int(input("Insira a sua resposta:"))
+    continuar = int(input("Insira a sua resposta: "))
 
-    # Valida a resposta do usuário
-    while continuar < 1 or continuar > 2:
-        continuar = int(input("resposta inválida, digite novamente:"))
+    # Validação da resposta
+    while continuar != 1 and continuar != 2:
+        continuar = int(input("resposta inválida, digite novamente: "))
 
-    # Se a resposta for não, encerra o jogo
     if continuar == 2:
-        print("Obrigado por jogar!!!")
+        print("\nObrigado por jogar!!!")
 
-    # Enquanto o jogador quiser continuar, o jogo repete
+    # Loop para continuar jogando
     while continuar == 1:
-        # Mostra opções novamente
-        print("pedra")
+        print("\npedra")
         print("papel")
         print("tesoura")
 
-        # Entrada do jogador
-        player = input("Digite oque deseja jogar:")
+        player = input("\nDigite o que deseja jogar: ").lower()
 
-        # Verifica se a entrada é válida
         while player not in ["pedra", "papel", "tesoura"]:
             print("Player 1 sua opção é inválida")
-            player = str(input("Por favor digite novamente:"))
+            player = str(input("Por favor digite novamente: ")).lower()
 
-        # Jogada aleatória do computador
         sorteio = random.randint(1, 3)
         computador = 0
         if sorteio == 1:
@@ -216,190 +202,191 @@ elif opcaomenu == 2:
         elif sorteio == 3:
             computador = "tesoura"
 
-        # Verifica o resultado do jogo
         if player == "pedra" and computador == "pedra":
-            print("o jogo empatou")
+            print("\no jogo empatou")
         elif player == "pedra" and computador == "papel":
-            print("o jogador 2 ganhou o jogo")
+            print("\na cpu ganhou o jogo")
             vitoriasCPU += 1
         elif player == "pedra" and computador == "tesoura":
-            print("o jogador 1 ganhou o jogo")
+            print("\no jogador ganhou o jogo")
             vitoriasP1 += 1
         elif player == "papel" and computador == "pedra":
-            print("o jogador 1 ganhou o jogo")
+            print("\no jogador ganhou o jogo")
             vitoriasP1 += 1
         elif player == "papel" and computador == "papel":
-            print("o jogo empatou")
+            print("\no jogo empatou")
         elif player == "papel" and computador == "tesoura":
-            print("o jogador 2 ganhou o jogo")
+            print("\na cpu ganhou o jogo")
             vitoriasCPU += 1
         elif player == "tesoura" and computador == "pedra":
-            print("o jogador 2 ganhou o jogo")
+            print("\na cpu ganhou o jogo")
             vitoriasCPU += 1
         elif player == "tesoura" and computador == "papel":
-            print("o jogador 1 ganhou o jogo")
+            print("\no jogador 1 ganhou o jogo")
             vitoriasP1 += 1
         elif player == "tesoura" and computador == "tesoura":
-            print("o jogo empatou")
+            print("\no jogo empatou")
 
-        # Mostra o placar atual
-        print("PLACAR:")
+        print("\nPLACAR:")
         print(f"Player {vitoriasP1} VS {vitoriasCPU} CPU")
 
-        # Pergunta se os jogadores querem continuar jogando
-        print("deseja continuar a jogo?")
+        print("\ndeseja continuar o jogo?")
         print("1 - sim")
         print("2 - não")
 
-        # Entrada do jogador
-        continuar = int(input("Insira a sua resposta:"))
+        continuar = int(input("Insira a sua resposta: "))
 
-        # Validação da resposta
-        while continuar < 1 or continuar > 2:
-            continuar = int(input("resposta inválida, digite novamente:"))
+        while continuar != 1 and continuar != 2:
+            continuar = int(input("resposta inválida, digite novamente: "))
 
-    # Mensagem de despedida
     if continuar == 2:
+        # Exibição do resultado final
+        if vitoriasP1 > vitoriasCPU:
+            print(f"\nPlayer venceu!")
+        elif vitoriasCPU > vitoriasP1:
+            print(f"\nCPU venceu!")
+        else:
+            print("\nEmpatou!")
         print("Obrigado por jogar!!!")
+        print(autores)   
 
-
-# Modo 3: PLAYER VS PLAYER
 elif opcaomenu == 3:
+    # PLAYER vs PLAYER
     print("Modo PLAYER VS PLAYER")
     print("Bem vindo ao modo PLAYER VS PLAYER, cada jogador deve escolher uma das seguintes opções:")
     print("pedra")
     print("papel")
     print("tesoura")
 
-    # Recebe a escolha dos jogadores de forma oculta com getpass
-    player1 = getpass.getpass("Player 1, selecione o que deseja jogar: ").lower()
-    player2 = getpass.getpass("Player 2, selecione o que deseja jogar: ").lower()
+    # Entrada dos nomes dos jogadores
+    nomep1 = input("\nAntes, o primeiro jogador deve colocar o seu nome: ")
+    nomep2 = input("Agora, o segundo jogador deve colocar o seu nome: ")
 
-    # Inicializa o placar
+    # Entrada secreta das jogadas
+    player1 = getpass.getpass(f"\n{nomep1}, selecione o que deseja jogar: ").lower()
+    while player1 not in ["pedra", "papel", "tesoura"]:
+        print(f"{nomep1} sua opção é inválida")
+        player1 = getpass.getpass("Por favor selecione novamente :").lower()
+
+    player2 = getpass.getpass(f"{nomep2}, selecione o que deseja jogar: ").lower()
+    while player2 not in ["pedra", "papel", "tesoura"]:
+        print(f"{nomep2} sua opção é inválida")
+        player2 = getpass.getpass("Por favor selecione novamente: ").lower()
+
+    # Inicialização dos placares
     vitoriasP1 = 0
     vitoriasP2 = 0
 
-    # Verifica se as escolhas dos jogadores são válidas
-    while player1 not in ["pedra", "papel", "tesoura"]:
-        print("Player 1 sua opção é inválida")
-        player1 = str(input("Por favor selecione novamente:"))
-
-    while player2 not in ["pedra", "papel", "tesoura"]:
-        print("Player 2 sua opção é inválida")
-        player2 = str(input("Por favor selecione novamente:"))
-
-    # Verifica o resultado do jogo
+    # Determinação do vencedor
     if player1 == "pedra" and player2 == "pedra":
-        print("o jogo empatou")
+        print("\no jogo empatou")
     elif player1 == "pedra" and player2 == "papel":
-        print("o jogador 2 ganhou o jogo")
+        print(f"\n{nomep2} ganhou o jogo")
         vitoriasP2 += 1
     elif player1 == "pedra" and player2 == "tesoura":
-        print("o jogador 1 ganhou o jogo")
+        print(f"\n{nomep1} ganhou o jogo")
         vitoriasP1 += 1
     elif player1 == "papel" and player2 == "pedra":
-        print("o jogador 1 ganhou o jogo")
+        print(f"\n{nomep1} ganhou o jogo")
         vitoriasP1 += 1
     elif player1 == "papel" and player2 == "papel":
-        print("o jogo empatou")
+        print("\no jogo empatou")
     elif player1 == "papel" and player2 == "tesoura":
-        print("o jogador 2 ganhou o jogo")
+        print(f"\n{nomep2} ganhou o jogo")
         vitoriasP2 += 1
     elif player1 == "tesoura" and player2 == "pedra":
-        print("o jogador 2 ganhou o jogo")
+        print(f"\n{nomep2} ganhou o jogo")
         vitoriasP2 += 1
     elif player1 == "tesoura" and player2 == "papel":
-        print("o jogador 1 ganhou o jogo")
+        print(f"\n{nomep1} ganhou o jogo")
         vitoriasP1 += 1
     elif player1 == "tesoura" and player2 == "tesoura":
-        print("o jogo empatou")
+        print("\no jogo empatou")
 
-    continuar = 0  # Inicializa a variável que decide se o jogo continua
+    continuar = 0 
 
-    # Mostra o placar atual
-    print("PLACAR:")
-    print(f"Player1 {vitoriasP1} VS {vitoriasP2} Player2")
+    # Exibição do placar
+    print("\nPLACAR:")
+    print(f"{nomep1} {vitoriasP1} VS {vitoriasP2} {nomep2}")
 
-    # Pergunta se os jogadores querem continuar jogando
-    print("deseja continuar a jogo?")
+    print("\ndeseja continuar o jogo?")
     print("1 - sim")
     print("2 - não")
 
-    continuar = int(input("Insira a sua resposta:"))
+    continuar = int(input("\nInsira a sua resposta: "))
 
-    # Valida a resposta
-    while continuar < 1 or continuar > 2:
-        continuar = int(input("resposta inválida, digite novamente:"))
+    while continuar != 1 and continuar != 2:
+        continuar = int(input("resposta inválida, digite novamente: "))
 
-    # Se a resposta for não, encerra o jogo
     if continuar == 2:
-        print("Obrigado por jogar!!!")
+        print("\nObrigado por jogar!!!")
 
-    # Enquanto a resposta for sim, repete a lógica do jogo
+    # Loop de jogadas
     while continuar == 1:
-        print("pedra")
+        print("\npedra")
         print("papel")
         print("tesoura")
 
-        # Recebe novas jogadas de forma oculta
-        player1 = getpass.getpass("Player 1, selecione o que deseja jogar: ").lower()
-        player2 = getpass.getpass("Player 2, selecione o que deseja jogar: ").lower()
+        player1 = getpass.getpass(f"\n{nomep1}, selecione o que deseja jogar: ").lower()
+        player2 = getpass.getpass(f"{nomep2}, selecione o que deseja jogar: ").lower()
 
-        # Valida as entradas novamente
         while player1 not in ["pedra", "papel", "tesoura"]:
-            print("Player 1 sua opção é inválida")
-            player1 = str(input("Por favor selecione novamente:"))
+            print(f"{nomep1} sua opção é inválida")
+            player1 = getpass.getpass("Por favor selecione novamente: ").lower()
 
         while player2 not in ["pedra", "papel", "tesoura"]:
-            print("Player 2 sua opção é inválida")
-            player2 = str(input("Por favor selecione novamente:"))
+            print(f"{nomep2} sua opção é inválida")
+            player2 = getpass.getpass("Por favor selecione novamente: ").lower()
 
-        # Lógica de verificação do vencedor (mesma do primeiro jogo)
         if player1 == "pedra" and player2 == "pedra":
-            print("o jogo empatou")
+            print("\no jogo empatou")
         elif player1 == "pedra" and player2 == "papel":
-            print("o jogador 2 ganhou o jogo")
+            print(f"\n{nomep2} ganhou o jogo")
             vitoriasP2 += 1
         elif player1 == "pedra" and player2 == "tesoura":
-            print("o jogador 1 ganhou o jogo")
+            print(f"\n{nomep1} ganhou o jogo")
             vitoriasP1 += 1
         elif player1 == "papel" and player2 == "pedra":
-            print("o jogador 1 ganhou o jogo")
+            print(f"\n{nomep1} ganhou o jogo")
             vitoriasP1 += 1
         elif player1 == "papel" and player2 == "papel":
-            print("o jogo empatou")
+            print("\no jogo empatou")
         elif player1 == "papel" and player2 == "tesoura":
-            print("o jogador 2 ganhou o jogo")
+            print(f"\n{nomep2} ganhou o jogo")
             vitoriasP2 += 1
         elif player1 == "tesoura" and player2 == "pedra":
-            print("o jogador 2 ganhou o jogo")
+            print(f"\n{nomep2} ganhou o jogo")
             vitoriasP2 += 1
         elif player1 == "tesoura" and player2 == "papel":
-            print("o jogador 1 ganhou o jogo")
+            print(f"\n{nomep1} ganhou o jogo")
             vitoriasP1 += 1
         elif player1 == "tesoura" and player2 == "tesoura":
-            print("o jogo empatou")
+            print("\no jogo empatou")
 
-        # Mostra o novo placar
-        print("PLACAR:")
-        print(f"Player1 {vitoriasP1} VS {vitoriasP2} Player2")
+        print("\nPLACAR:")
+        print(f"{nomep1} {vitoriasP1} VS {vitoriasP2} {nomep2}")
 
-        # Pergunta novamente se querem continuar
-        print("deseja continuar a jogo?")
+        print("\ndeseja continuar o jogo?")
         print("1 - sim")
         print("2 - não")
 
-        continuar = int(input("Insira a sua resposta:"))
+        continuar = int(input("Insira a sua resposta: "))
 
-        while continuar < 1 or continuar > 2:
-            continuar = int(input("resposta inválida, digite novamente:"))
+        while continuar != 1 and continuar != 2:
+            continuar = int(input("resposta inválida, digite novamente: "))
 
         if continuar == 2:
+            # Exibição do resultado final
+            if vitoriasP1 > vitoriasP2:
+                print(f"\n{nomep1} venceu o jogo!")
+            elif vitoriasP2 > vitoriasP1:
+                print(f"\n{nomep2} venceu o jogo!")
+            else:
+                print("\nO jogo empatou!")
             print("Obrigado por jogar!!!")
-
-
-# Opção 4: o jogador escolheu sair do jogo
+            print(autores)   
+   
 elif opcaomenu == 4:
-    print("Você escolheu sair")
-
-print("Programa desenvolvido por: João Vitor Simão Ribas, Eduardo Marques e Arthur Krauze")   
+    # Opção de sair
+    print("Você escolheu sair :(")
+    print(autores)   
