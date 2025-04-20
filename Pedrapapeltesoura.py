@@ -139,37 +139,37 @@ elif opcaomenu == 2:
     # Determinação do vencedor
     if player == "pedra" and computador == "pedra":
         print(f"\na CPU jogou {computador}")
-        print("\no jogo empatou")
+        print("o jogo empatou")
     elif player == "pedra" and computador == "papel":
         print(f"\na CPU jogou {computador}")
-        print("\na cpu ganhou o jogo")
+        print("a cpu ganhou o jogo")
         vitoriasCPU += 1
     elif player == "pedra" and computador == "tesoura":
         print(f"\na CPU jogou {computador}")
-        print("\no jogador ganhou o jogo")
+        print("o jogador ganhou o jogo")
         vitoriasP1 += 1
     elif player == "papel" and computador == "pedra":
         print(f"\na CPU jogou {computador}")
-        print("\no jogador ganhou o jogo")
+        print("o jogador ganhou o jogo")
         vitoriasP1 += 1
     elif player == "papel" and computador == "papel":
         print(f"\na CPU jogou {computador}")
-        print("\no jogo empatou")
+        print("o jogo empatou")
     elif player == "papel" and computador == "tesoura":
         print(f"\na CPU jogou {computador}")
-        print("\na cpu ganhou o jogo")
+        print("a cpu ganhou o jogo")
         vitoriasCPU += 1
     elif player == "tesoura" and computador == "pedra":
         print(f"\na CPU jogou {computador}")
-        print("\na cpu ganhou o jogo")
+        print("a cpu ganhou o jogo")
         vitoriasCPU += 1
     elif player == "tesoura" and computador == "papel":
         print(f"\na CPU jogou {computador}")
-        print("\no jogador 1 ganhou o jogo")
+        print("o jogador 1 ganhou o jogo")
         vitoriasP1 += 1
     elif player == "tesoura" and computador == "tesoura":
         print(f"\na CPU jogou {computador}")
-        print("\no jogo empatou")
+        print("o jogo empatou")
 
     # Exibição do placar
     print("\nPLACAR:")
@@ -213,37 +213,37 @@ elif opcaomenu == 2:
 
         if player == "pedra" and computador == "pedra":
             print(f"\na CPU jogou {computador}")
-            print("\no jogo empatou")
+            print("o jogo empatou")
         elif player == "pedra" and computador == "papel":
             print(f"\na CPU jogou {computador}")
-            print("\na cpu ganhou o jogo")
+            print("a cpu ganhou o jogo")
             vitoriasCPU += 1
         elif player == "pedra" and computador == "tesoura":
             print(f"\na CPU jogou {computador}")
-            print("\no jogador ganhou o jogo")
+            print("o jogador ganhou o jogo")
             vitoriasP1 += 1
         elif player == "papel" and computador == "pedra":
             print(f"\na CPU jogou {computador}")
-            print("\no jogador ganhou o jogo")
+            print("o jogador ganhou o jogo")
             vitoriasP1 += 1
         elif player == "papel" and computador == "papel":
             print(f"\na CPU jogou {computador}")
-            print("\no jogo empatou")
+            print("o jogo empatou")
         elif player == "papel" and computador == "tesoura":
             print(f"\na CPU jogou {computador}")
-            print("\na cpu ganhou o jogo")
+            print("a cpu ganhou o jogo")
             vitoriasCPU += 1
         elif player == "tesoura" and computador == "pedra":
             print(f"\na CPU jogou {computador}")
-            print("\na cpu ganhou o jogo")
+            print("a cpu ganhou o jogo")
             vitoriasCPU += 1
         elif player == "tesoura" and computador == "papel":
             print(f"\na CPU jogou {computador}")
-            print("\no jogador 1 ganhou o jogo")
+            print("o jogador 1 ganhou o jogo")
             vitoriasP1 += 1
         elif player == "tesoura" and computador == "tesoura":
             print(f"\na CPU jogou {computador}")
-            print("\no jogo empatou")
+            print("o jogo empatou")
 
         print("\nPLACAR:")
         print(f"Player {vitoriasP1} VS {vitoriasCPU} CPU")
