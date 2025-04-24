@@ -27,23 +27,16 @@ while opcaomenu not in [1, 2, 3, 4]:
 if opcaomenu == 1:
     # CPU vs CPU
     print("\nModo CPU VS CPU")
-    print("Bem vindo ao modo CPU VS CPU, o jogador deve escolher o numero de rodadas desejadas")
-
-    # número de rodadas
-    rodadas = int ( input("\nDigite o numero de jogadas desejadas: "))
-
-    # validação do número de rodadas
-    while rodadas <= 0:
-        rodadas = int(input("Valor inválido, digite novamente: "))
+    print("Bem vindo ao modo CPU VS CPU")
 
     # inicialização dos placares
     vitoriasCPU1 = 0
     vitoriasCPU2 = 0
     empate = 0
 
-    contador = 0
+    jogar = 1
     # loop principal das rodadas
-    while contador < rodadas:
+    while jogar == 1:
         # sorteio da jogada da CPU1
         sorteio1 = random.randint(1, 3)
         cpu1 = 0
@@ -63,6 +56,20 @@ if opcaomenu == 1:
             cpu2 = "papel"
         elif sorteio2 == 3:
             cpu2 = "tesoura"
+
+        if sorteio1 == 1:
+            print("Cpu1 jogou pedra")
+        elif sorteio1 == 2:
+            print("Cpu1 jogou papel")
+        elif sorteio1 == 3:
+            print("Cpu1 jogou tesoura")
+
+        if sorteio2 == 1:
+            print("Cpu2 jogou pedra")
+        elif sorteio2 == 2:
+            print("Cpu2 jogou papel")
+        elif sorteio2 == 3:
+            print("Cpu2 jogou tesoura")
 
         # vencedor da rodada
         if cpu1 == "pedra" and cpu2 == "pedra":
@@ -93,7 +100,13 @@ if opcaomenu == 1:
             print("\no jogo empatou")
             empate += 1
 
-        contador += 1 
+        contador = input("Deseja continuar a jogar?\n1 - sim\n2 - não\n")
+
+        while contador != "1" and contador != "2":
+            print("resposta inválida")
+            contador = input("Digite novamente\n")
+
+        jogar = int(contador)
 
     # placar final
     print("\n***PLACAR FINAL***")
@@ -102,7 +115,8 @@ if opcaomenu == 1:
 
     # agradecimento
     print("\nObrigado por jogar")
-    print(autores)   
+    print("autores")
+   
 
 elif opcaomenu == 2:
     # player vs CPU
