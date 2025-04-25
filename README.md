@@ -27,6 +27,9 @@ O jogo possui três modos disponíveis:
 Este repositório foi criado para armazenar o projeto e praticar o uso do **GitHub**.  
 Sinta-se à vontade para explorar o código e contribuir!
 
+Link do Video de apresentação do Código:https://youtu.be/MhXTBwYuEbs
+
+
 ---
 
 Desenvolvido por João Vitor Simão Ribas, Arthur Krauze, Eduardo Marques

@@ -1,6 +1,6 @@
 import getpass 
 import random
-
+# O link do vídeo está no README 
 # os autores!!
 autores = "Programa desenvolvido por: João Vitor Simão Ribas, Eduardo Trancoso Marques e Arthur Krauze"
 
